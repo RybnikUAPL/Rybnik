@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="город рыбник rybnik UA PL сайт помощь украинцам faq часто задаваемые вопросы полезная информация">
+
+
+    <title>Site Rybnik UA PL</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" href="css/magnific-popup.css">                                <!-- Magnific pop up style, http://dimsemenov.com/plugins/magnific-popup/ -->
+    <link rel="stylesheet" href="css/templatemo-style.css">                                   <!-- Templatemo style -->
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>        
+    <div class="container">
+        <div class="row">
+            <div class="tm-left-right-container">
+                <!-- Left column: logo and menu -->
+                <div class="tm-blue-bg tm-left-column">                        
+                    <div class="tm-logo-div text-xs-center">
+                        <img src="img/logo.png" alt="Logo">
+                        <h1 class="tm-site-name">Rybnik UA PL</h1>
+                    </div>
+                    <nav class="tm-main-nav">
+                        <ul class="tm-main-nav-ul">
+                            <li class="tm-nav-item">
+                                <a href="index.html#welcome" class="tm-nav-item-link">Добро пожаловать</a>
+                            </li>
+                            <li class="tm-nav-item">
+                                <a href="index.html#about" class="tm-nav-item-link">Краткая инфомация по сайту</a>
+                            </li>
+                            <li class="tm-nav-item">
+                                <a href="index.html#question1" class="tm-nav-item-link">Основная информация</a>
+                            </li>
+                            <li class="tm-nav-item">
+                                <a href="index.html#question2" class="tm-nav-item-link">Часто задаваемые вопросы</a>
+                            </li>
+                            <li class="tm-nav-item">
+                                <a href="index.html#question3" class="tm-nav-item-link">Зона развлечений</a>
+                            </li>
+                            <li class="tm-nav-item">
+                                <a href="index.html#contact" class="tm-nav-item-link">Как с нами связаться</a>
+                            </li>
+                        </ul>
+                    </nav>                                         
+                </div> <!-- Left column: logo and menu -->
+
+                <!-- Center content -->
+                <div class="tm-right-column">
+                    <div class="tm-content-div">
+
+                        <!-- Добавленная информация по центру -->
+                        <section id="additional-info" class="tm-section">
+                            <header>
+                                <h2 class="tm-blue-text tm-section-title tm-margin-b-30">Зона развлечений</h2>
+                            </header>
+                            <p>Погода. Музыка. И что-то еще.</p>
+                            <!-- Погодный Блок-->
+                            <div id="weather-widget">
+                                <h2>Погода в нашем городе Rybnik</h2>
+                                <img id="weather-icon" alt="Weather Icon">
+                                <span id="temperature">Текущая температура:  id="temperature-value"></span>,
+                                <span id="description">Состояние:  id="weather-description"></span>,
+                                <span id="wind">Скорость ветра:  id="wind-speed"></span> м/с, <span id="wind-direction"></span>,
+                            </div>
+                            <ul>
+                                <li>Строка 1</li>
+                            </ul>
+                            <p>Помните</p>
+                                <!-- Радиопроигрыватель -->
+                                <figure>
+                                    <audio id="radioPlayer" controls>
+                                        <source src="http://online.kissfm.ua/KissFM" type="audio/mpeg">
+                                        Ваш браузер не поддерживает проигрывание аудио.
+                                    </audio>
+                                    <div id="customControls">
+                                        <label for="volume">Громкость:</label>
+                                        <input type="range" id="volume" name="volume" min="0" max="2" step="0.1" value="1">
+                                        <br>
+                                        <label for="speed">Скорость воспроизведения:</label>
+                                        <input type="range" id="speed" name="speed" min="0.5" max="2" step="0.1" value="1">
+                                    </div>
+                                    <p>Станция KissFM Ukraine!</p>
+                                
+                                    <script>
+                                        const audio = document.getElementById('radioPlayer');
+                                        const volumeControl = document.getElementById('volume');
+                                        const speedControl = document.getElementById('speed');
+                                        
+                                        volumeControl.addEventListener('input', () => {
+                                            audio.volume = volumeControl.value;
+                                        });
+                                        
+                                        speedControl.addEventListener('input', () => {
+                                            audio.playbackRate = speedControl.value;
+                                        });
+                                    </script>
+                                </figure>
+                                
+                        </section>
+                    </section>
+                    <footer>
+                        <p class="tm-copyright-p">Copyright &copy; <span class="tm-current-year">2024</span>                                
+                        <a href="http://www.soloviovanatolii.com" target="_parent">Soloviov Anatolii</a> Все права защищены </p>
+                    </footer>
+
+                    </div>  
+                </div>
+            </div> <!-- tm-left-right-container -->
+        </div> <!-- row -->
+    </div> <!-- container -->
+
+    <!-- Ваши стили и скрипты можно добавить здесь -->
+    <!-- Погодный скрипт -->
+    <script>
+        const apiKey = 'dd5d78b06ff6d995459682c44d8ea459'; // Замените 'YOUR_API_KEY' на ваш собственный API-ключ
+        const city = 'RYBNIK'; // Замените 'YOUR_CITY' на ваш город
+    
+        const weatherIconElement = document.getElementById('weatherIcon');
+        const weatherWidget = document.getElementById('weather-widget');
+        const temperatureElement = document.getElementById('temperature');
+        const descriptionElement = document.getElementById('description');
+        const windElement = document.getElementById('wind');
+        const windDirectionElement = document.getElementById('windDirection');
+        
+    
+        const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=ru&units=metric`;
+    
+        // Функция для обновления данных погоды
+        function updateWeather() {
+            fetch(apiURL)
+                .then(response => response.json())
+                .then(data => {
+                    const iconCode = data.weather[0].icon;
+                    const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+                    document.getElementById('weather-icon').src = iconUrl;
+
+                    const temperature = data.main.temp;
+                    const description = data.weather[0].description;
+                    const wind = data.main.temp;
+                    const windDirection = data.windDirection;
+    
+                    temperatureElement.textContent = `Температура: ${temperature}°C`;
+                    descriptionElement.textContent = `Описание: ${description}`;
+                    windElement.textContent = `Скорость ветра: ${wind}`;
+                    windDirectionElement.textContent = `Градусов: ${windDirection}`;
+                })
+                .catch(error => console.error('Ошибка получения данных о погоде', error));
+        }
+    
+        // Обновляем данные при загрузке страницы
+        updateWeather();
+    </script>
+    <script>
+        function displayWindDirection(degrees) {
+            const directions = ['С', 'ССВ', 'СВ', 'ВСВ', 'В', 'ВЮВ', 'ЮВ', 'ЮЮВ', 'Ю', 'ЮЮЗ', 'ЮЗ', 'ЗЮЗ', 'З', 'ЗСЗ', 'СЗ', 'ССЗ'];
+            const index = Math.round(degrees / 22.5) % 16;
+            const direction = directions[index];
+            document.getElementById('wind-direction').textContent = `Направление ветра: ${direction}`;
+        }
+    
+        // Пример использования
+        const windDirectionDegrees = 45; // Замените на фактический угол направления ветра
+        displayWindDirection(windDirectionDegrees);
+    </script>
+    
+</body>
+</html>
