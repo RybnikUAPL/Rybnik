@@ -1,8 +1,5 @@
 g-fluid/*
 
-Neaty HTML Template
-
-http://www.templatemo.com/tm-501-neaty
 
 */
 body {
@@ -47,6 +44,10 @@ a:focus {
 	padding-left: 0;
 }
 
+.tm-text-center {
+	text-align: center;
+}
+
 .tm-section { margin-bottom: 20px; }
 .tm-welcome-title {	font-size: 2.0rem; }
 .tm-section-title {	font-size: 2.0rem; }
@@ -61,12 +62,22 @@ p { line-height: 2; }
 	color: white;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 1.4rem;	
-	padding: 18px 35px;
+	font-size: 1.2rem;	
+	padding: 5px 15px;
 	border-radius: 4px; /* Скругление углов */
 }
 
-.tm-button-wide { padding: 18px 40px; }
+.tm-button-wide { 
+	padding: 8px;
+        font-size: 14px;
+        border: 1px solid #007bff;
+        border-radius: 5px;
+        width: 200px;
+        margin-top: 10px;
+        color: #333;
+        background-color: #f8f9fa;
+        outline: none; /* Убирает контур фокуса */
+}
 
 .tm-button:hover,
 .tm-button:active,
@@ -113,6 +124,24 @@ p { line-height: 2; }
 }
 
 .tm-contact-right { margin-top: 40px; }
+/* for radio*/
+.tm-container {
+	display: flex; /* Используем flex-контейнер */
+	align-items: center;
+	justify-content: space-between; /* Равномерно распределяем пространство между элементами */
+}
+
+.tm-container-block {
+	display: flex; /* Используем flex-контейнер */
+	align-items: center;
+	width: 50%; /* Ширина каждого блока - 30% от ширины контейнера */
+	border: none;
+	padding: 5px; /* Добавляем отступы вокруг содержимого блока */
+	box-sizing: border-box; /* Учитываем границу в общей ширине блока */
+	font-weight: bold;
+	text-align: center;
+}
+
 
 .form-control {
 	border-color: #0a6697;
@@ -120,6 +149,30 @@ p { line-height: 2; }
 	color: #4286ab;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 1.3rem;
+}
+
+#stationSelect {
+	padding: 8px;
+	font-size: 14px;
+	border: 1px solid #007bff;
+	border-radius: 5px;
+	width: 200px;
+	margin-top: 10px;
+	color: #333;
+	background-color: #f8f9fa;
+	outline: none; /* Убирает контур фокуса */
+}
+
+#stationSelect option {
+	background-color: #f8f9fa;
+	color: #333;
+	padding: 8px;
+	border-bottom: 1px solid #dee2e6; /* Добавляет разделитель между опциями */
+}
+
+#stationSelect:hover,
+#stationSelect:focus {
+	border-color: #0056b3; /* Цвет границы при наведении или фокусе */
 }
 
 input::-webkit-input-placeholder,
@@ -229,7 +282,6 @@ textarea:-ms-input-placeholder {
 
 @media (min-width: 1200px) {		
 	.container { width: 100%; }	
-	.tm-button-wide { padding: 18px 68px; }
 	.tm-img-container-1 { width: 20%; }
 	.tm-img-container-2 { width: 20%; }
 	.tm-img-container-3 { width: 20%; }
