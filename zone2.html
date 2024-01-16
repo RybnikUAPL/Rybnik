@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="город рыбник rybnik UA PL сайт помощь украинцам faq часто задаваемые вопросы полезная информация">
+    <title>Site Rybnik UA PL</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="tm-left-right-container">
+                <div class="tm-blue-bg tm-left-column">
+                    <div class="tm-logo-div text-xs-center">
+                        <img src="img/logo.png" alt="Logo">
+                        <h1 class="tm-site-name">Rybnik UA PL</h1>
+                    </div>
+                    <nav class="tm-main-nav">
+                        <ul class="tm-main-nav-ul">
+                            <!-- Ваши пункты меню -->
+                        </ul>
+                    </nav>
+                </div>
+                <div class="tm-right-column">
+                    <div class="tm-content-div">
+                        <section id="additional-info" class="tm-section">
+                            <header>
+                                <h2 class="tm-blue-text tm-section-title tm-margin-b-30">Зона развлечений</h2>
+                            </header>
+                            <p>Погода. Музыка. И что-то еще.</p>
+                            <!-- Простой радиопроигрыватель с выбором радиостанции -->
+                            <figure>
+                                <audio id="radioPlayer" controls autoplay>
+                                    <source id="radioSource" src="http://online.kissfm.ua/KissFM_Deep" type="audio/mpeg">
+                                    Ваш браузер не поддерживает проигрывание аудио.
+                                </audio>
+                                <br>
+                                <!-- Добавьте кнопку для открытия списка -->
+                                <div>
+                                    <button onclick="toggleContextMenu()">Выбрать радиостанцию</button>
+                                    <!-- Всплывающий список выбора радиостанций -->
+                                    <select id="stationSelect" onchange="changeStation()" style="display: none;">
+                                        <option value="http://online.kissfm.ua/KissFM">Kiss FM</option>
+                                        <option value="http://online.kissfm.ua/KissFM_Ukr">Kiss FM UKR</option>
+                                        <option value="http://online.kissfm.ua/KissFM_Deep">Kiss FM DEEP</option>
+                                    </select>
+                                </div>
+                                <!-- Элементы управления и информация о станции -->
+                                <div id="customControls">
+                                    <label for="volume">Громкость:</label>
+                                    <input type="range" id="volume" name="volume" min="0" max="2" step="0.1" value="1">
+                                    <br>
+                                </div>
+                                <p>Станция KissFM Ukraine!</p>
+                            </figure>
+                        </section>
+                        <footer>
+                        <!-- Кнопка "Вернуться на главную страницу" -->
+                            <button class="float-right tm-button" onclick="goToHomePage()">Вернуться на главную страницу</button>
+                            <p class="tm-copyright-p">Copyright &copy; <span class="tm-current-year">2024</span>
+                            <a href="http://www.soloviovanatolii.com" target="_parent">Soloviov Anatolii</a> Все права защищены
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Свои стили и скрипты я добавлю здесь -->
+
+    <!-- Скрипт "Вернуться на главную страницу" -->
+    <script>
+        function goToHomePage() {
+          // Используйте window.location.href для перенаправления на главную страницу
+          window.location.href = "index.html";
+        }
+    </script>
+
+    <script>
+        function toggleContextMenu() {
+            var selectMenu = document.getElementById("stationSelect");
+            selectMenu.style.display = (selectMenu.style.display === "none" || selectMenu.style.display === "") ? "block" : "none";
+        }
+
+        function changeStation() {
+            var selectMenu = document.getElementById("stationSelect");
+            var selectedStation = selectMenu.value;
+            document.getElementById("radioSource").src = selectedStation;
+            document.getElementById("radioPlayer").load();
+            toggleContextMenu(); // Закрыть меню после выбора
+        }
+    </script>
+</body>
+</html>

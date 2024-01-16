@@ -76,6 +76,8 @@
                         </section>
                     </section>
                     <footer>
+                        <!-- Кнопка "Вернуться на главную страницу" -->
+                        <button class="float-right tm-button" onclick="goToHomePage()">Вернуться на главную страницу</button>
                         <p class="tm-copyright-p">Copyright &copy; <span class="tm-current-year">2024</span>                                
                         <a href="http://www.soloviovanatolii.com" target="_parent">Soloviov Anatolii</a> Все права защищены </p>
                     </footer>
@@ -86,7 +88,16 @@
         </div> <!-- row -->
     </div> <!-- container -->
 
-    <!-- Ваши стили и скрипты можно добавить здесь -->
+     <!-- Свои стили и скрипты я добавлю здесь -->
+
+    <!-- Скрипт "Вернуться на главную страницу" -->
+    <script>
+        function goToHomePage() {
+          // Используйте window.location.href для перенаправления на главную страницу
+          window.location.href = "index.html";
+        }
+      </script>
+
 
 </body>
 </html>

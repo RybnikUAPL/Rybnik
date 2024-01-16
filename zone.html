@@ -18,6 +18,8 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
 </head>
 <body>        
     <div class="container">
@@ -65,49 +67,39 @@
                             <p>Погода. Музыка. И что-то еще.</p>
                             <!-- Погодный Блок-->
                             <div id="weather-widget">
-                                <h2>Погода в нашем городе Rybnik</h2>
+                                <h2 class="tm-blue-text tm-section-title tm-margin-b-30">Погода в нашем городе Rybnik</h2>
                                 <img id="weather-icon" alt="Weather Icon">
                                 <span id="temperature">Текущая температура:  id="temperature-value"></span>,
                                 <span id="description">Состояние:  id="weather-description"></span>,
                                 <span id="wind">Скорость ветра:  id="wind-speed"></span> м/с, <span id="wind-direction"></span>,
                             </div>
-                            <ul>
-                                <li>Строка 1</li>
-                            </ul>
-                            <p>Помните</p>
                                 <!-- Радиопроигрыватель -->
-                                <figure>
-                                    <audio id="radioPlayer" controls>
-                                        <source src="http://online.kissfm.ua/KissFM" type="audio/mpeg">
-                                        Ваш браузер не поддерживает проигрывание аудио.
-                                    </audio>
-                                    <div id="customControls">
-                                        <label for="volume">Громкость:</label>
-                                        <input type="range" id="volume" name="volume" min="0" max="2" step="0.1" value="1">
-                                        <br>
-                                        <label for="speed">Скорость воспроизведения:</label>
-                                        <input type="range" id="speed" name="speed" min="0.5" max="2" step="0.1" value="1">
-                                    </div>
-                                    <p>Станция KissFM Ukraine!</p>
-                                
-                                    <script>
-                                        const audio = document.getElementById('radioPlayer');
-                                        const volumeControl = document.getElementById('volume');
-                                        const speedControl = document.getElementById('speed');
-                                        
-                                        volumeControl.addEventListener('input', () => {
-                                            audio.volume = volumeControl.value;
-                                        });
-                                        
-                                        speedControl.addEventListener('input', () => {
-                                            audio.playbackRate = speedControl.value;
-                                        });
-                                    </script>
-                                </figure>
-                                
+                                <section id="question3" class="tm-section">
+                                    <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Радио хорошего настроения в Rybnik </h2></header>
+                                    <figure>
+                                        <div class="tm-container ">
+                                            <div class="tm-container-block">
+                                                <audio id="radioPlayer" controls autoplay>
+                                                    <source id="radioSource" src="http://online.kissfm.ua/KissFM" type="audio/mpeg">
+                                                    Ваш браузер не поддерживает проигрывание аудио.
+                                                </audio>
+                                            </div>
+                                            <div class="tm-container-block">
+                                                <button class="tm-button-wide" title="Нажмите для выбора радиостанции" onclick="toggleContextMenu()">Выбрать радиостанцию</button>
+                                                <select id="stationSelect" onchange="changeStation()">
+                                                    <option value="http://online.kissfm.ua/KissFM">Kiss FM</option>
+                                                    <option value="http://online.kissfm.ua/KissFM_Ukr">Kiss FM UKR</option>
+                                                    <option value="http://online.kissfm.ua/KissFM_Deep">Kiss FM DEEP</option>
+                                                    <option value="https://srv0.streamradiowy.eu/radio90?2119407125">RARIO 90 RYBNIK</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </figure>    
+                                </section>
                         </section>
-                    </section>
                     <footer>
+                        <!-- Кнопка "Вернуться на главную страницу" -->
+                        <button class="float-right tm-button" onclick="goToHomePage()">Вернуться на главную страницу</button>
                         <p class="tm-copyright-p">Copyright &copy; <span class="tm-current-year">2024</span>                                
                         <a href="http://www.soloviovanatolii.com" target="_parent">Soloviov Anatolii</a> Все права защищены </p>
                     </footer>
@@ -118,7 +110,16 @@
         </div> <!-- row -->
     </div> <!-- container -->
 
-    <!-- Ваши стили и скрипты можно добавить здесь -->
+     <!-- Свои стили и скрипты я добавлю здесь -->
+
+    <!-- Скрипт "Вернуться на главную страницу" -->
+    <script>
+        function goToHomePage() {
+          // Используйте window.location.href для перенаправления на главную страницу
+          window.location.href = "index.html";
+        }
+      </script>
+
     <!-- Погодный скрипт -->
     <script>
         const apiKey = 'dd5d78b06ff6d995459682c44d8ea459'; // Замените 'YOUR_API_KEY' на ваш собственный API-ключ
@@ -146,7 +147,7 @@
                     const temperature = data.main.temp;
                     const description = data.weather[0].description;
                     const wind = data.wind.speed;
-                    const windDirection = data.windDirection;
+                    const windDirection = data.wind.deg;
     
                     temperatureElement.textContent = `Температура: ${temperature}°C`;
                     descriptionElement.textContent = `Описание: ${description}`;
@@ -171,6 +172,21 @@
         const windDirectionDegrees = 45; // Замените на фактический угол направления ветра
         displayWindDirection(windDirectionDegrees);
     </script>
-    
+
+    <script>
+        function toggleContextMenu() {
+            var selectMenu = document.getElementById("stationSelect");
+            selectMenu.style.display = (selectMenu.style.display === "none" || selectMenu.style.display === "") ? "block" : "none";
+        }
+
+        function changeStation() {
+            var selectMenu = document.getElementById("stationSelect");
+            var selectedStation = selectMenu.value;
+            document.getElementById("radioSource").src = selectedStation;
+            document.getElementById("radioPlayer").load();
+            toggleContextMenu(); // Закрыть меню после выбора
+        }
+    </script>
+
 </body>
 </html>
