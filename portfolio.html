@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мое портфолио</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            width: 200px;
+            height: 100vh;
+            background-color: #2ecc71;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            display: block;
+            padding: 15px;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid #27ae60;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #27ae60;
+        }
+
+        section {
+            margin-left: 220px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20%;
+        }
+
+        footer {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .container img {
+            max-width: 100%;
+            margin-right: 10px;
+            border: 2px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .tm-copyright-p {
+            color: #bdc3c7;
+        }
+
+        /* Обновленные стили для раздела "Обо мне" */
+        #about p {
+            font-size: 18px; /* Увеличенный размер текста */
+            line-height: 1.6; /* Увеличенный интервал между строками */
+            color: #333; /* Цвет текста делового стиля */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Мое портфолио</h1>
+    </header>
+
+    <nav>
+        <a href="#about">Обо мне</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+
+    <section id="about">
+        <h2>Обо мне</h2>
+        <div class="container">
+            <img src="img/my_photo.jpg" alt="Моя фотография">
+            <p style="font-size: 22px; color: #333;">Привет! Меня зовут Anatolii Soloviov. Я занимаюсь построением сайтов и
+                это также моё увлечение. В данном портфолио вы найдете информацию о моем опыте работы и выполненных проектах.
+            </p>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>Портфолио</h2>
+        <p>Здесь предоставлены мои проекты</p>
+        <a href="http://rybnikuapl.github.io/Rybnik/index.html" target="_blank">Сайт Rybnik UA PL</a>
+    </section>
+
+    <section id="contact">
+        <h2>Контакты</h2>
+        <!-- Здесь добавьте свои контактные данные -->
+    </section>
+
+    <footer>
+        <p class="tm-copyright-p">Copyright &copy; <span class="tm-current-year">2024</span>
+            <a href="https://github.com/wcsandro/anatoliisoloviov" target="_parent">Soloviov Anatolii</a> Все права защищены
+        </p>
+    </footer>
+</body>
+
+</html>
