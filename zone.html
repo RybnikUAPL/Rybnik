@@ -152,7 +152,7 @@
                     temperatureElement.textContent = `Температура: ${temperature}°C`;
                     descriptionElement.textContent = `Описание: ${description}`;
                     windElement.textContent = `Скорость ветра: ${wind}`;
-                    windDirectionElement.textContent = `Градусов: ${windDirection}`;
+                    displayWindDirection(windDirection);
                 })
                 .catch(error => console.error('Ошибка получения данных о погоде', error));
         }
@@ -167,8 +167,6 @@
             const direction = directions[index];
             document.getElementById('wind-direction').textContent = `Направление ветра: ${direction}`;
         }
-    
-        // Пример использования
         const windDirectionDegrees = 45; // Замените на фактический угол направления ветра
         displayWindDirection(windDirectionDegrees);
     </script>
