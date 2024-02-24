@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="город рыбник rybnik UA PL сайт помощь украинцам faq часто задаваемые вопросы полезная информация">
+    <meta name="description" content="город рыбник rybnik UA PL погода музыка ">
 
 
     <title>Rybnik UA PL</title>
@@ -62,7 +62,7 @@
                         <!-- Добавленная информация по центру -->
                         <section id="additional-info" class="tm-section">
                             <header>
-                                <h2 class="tm-blue-text tm-section-title tm-margin-b-30">Зона развлечений</h2>
+                                <h2 class="tm-blue-text tm-section-title tm-margin-b-30">Зона развлечений.</h2>
                             </header>
                             <p>Погода. Музыка. И что-то еще.</p>
                             <!-- Погодный Блок-->
@@ -110,8 +110,13 @@
         </div> <!-- row -->
     </div> <!-- container -->
 
-     <!-- Свои стили и скрипты я добавлю здесь -->
-
+     <!-- Громкость плеера на хх процентов при загрузке страницы -->
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var player = document.getElementById('radioPlayer');
+            player.volume = 0.10; // Установка громкости на 25%
+        });
+    </script>
     <!-- Скрипт "Вернуться на главную страницу" -->
     <script>
         function goToHomePage() {
