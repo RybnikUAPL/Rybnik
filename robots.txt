@@ -4,3 +4,4 @@ Allow: /
 Disallow: /newsNULL
 Disallow: /foto
 Disallow: /zone4
+Sitemap: https://rybnikuapl.github.io/Rybnik/sitemap.xml
