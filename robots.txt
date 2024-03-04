@@ -1,2 +1,6 @@
 User-agent: *
-Disallow: /закрытая-страница/
+User-agent: Googlebot
+Allow: /
+Disallow: /newsNULL
+Disallow: /foto
+Disallow: /zone4
