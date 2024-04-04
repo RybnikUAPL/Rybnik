@@ -175,6 +175,39 @@ p { line-height: 2; }
 	border-color: #0056b3; /* Цвет границы при наведении или фокусе */
 }
 
+#header .bottom
+{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+#header .icons
+{
+	font-size: 1.5em;
+	margin: 0 0 1em 0;
+	text-align: center;
+}
+
+#header .icons a
+{
+	color: #b6c4cc;
+	-moz-transition: color 0.35s ease-in-out;
+	-webkit-transition: color 0.35s ease-in-out;
+	-o-transition: color 0.35s ease-in-out;
+	-ms-transition: color 0.35s ease-in-out;
+	transition: color 0.35s ease-in-out;
+	margin-right: 10px;
+}
+	
+#header .icons a:hover
+{
+	color: #fff;
+}
+
+
+
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
 	color: #4286ab !important;
