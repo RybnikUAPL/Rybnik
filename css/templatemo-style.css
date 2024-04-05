@@ -104,9 +104,7 @@ p { line-height: 2; }
 .tm-img-container {	float: left; }
 
 .tm-img-container-1,
-.tm-img-container-2,
-.tm-img-container-3
-.tm-img-container-4 { 
+.tm-img-container-2 { 
 	margin-bottom: 10px;
 	width: 50%; 
 	text-align: center;
@@ -116,9 +114,7 @@ p { line-height: 2; }
 .tm-img-tn {
 	padding-left: 5px;
 	padding-right: 5px;
-}
-
-.tm-img-tn {
+	border-radius: 20%;
 	display: block;
 	margin: 0 auto;
 }
@@ -198,12 +194,42 @@ p { line-height: 2; }
 	-o-transition: color 0.35s ease-in-out;
 	-ms-transition: color 0.35s ease-in-out;
 	transition: color 0.35s ease-in-out;
-	margin-right: 10px;
+	margin-right: 15px;
 }
-	
 #header .icons a:hover
 {
-	color: #fff;
+	color: #e9e780;
+}
+
+#footer .bottom
+{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+#footer .icons
+{
+	font-size: 1.8em;
+	margin: 0 0 1em 0;
+	text-align: left;
+}
+
+#footer .icons a
+{
+	color: #4286ab;
+	-moz-transition: color 0.35s ease-in-out;
+	-webkit-transition: color 0.35s ease-in-out;
+	-o-transition: color 0.35s ease-in-out;
+	-ms-transition: color 0.35s ease-in-out;
+	transition: color 0.35s ease-in-out;
+	margin-right: 25px;
+}
+	
+#footer .icons a:hover
+{
+	color: #e9e780;
 }
 
 
