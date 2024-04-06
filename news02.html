@@ -9,6 +9,7 @@
 
 
     <title>Site Rybnik UA PL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
     <link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
     <link rel="stylesheet" href="css/magnific-popup.css">                                <!-- Magnific pop up style, http://dimsemenov.com/plugins/magnific-popup/ -->
@@ -26,6 +27,11 @@
     </script>
 
 <body>        
+    <script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="js/jquery.magnific-popup.min.js"></script>     <!-- Magnific pop-up (http://dimsemenov.com/plugins/magnific-popup/) -->
+    <script src="js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+    <script src="js/main.js"></script>                          <!-- Navigation and footer-->
+
     <div class="container">
         <div class="row">
             <div class="tm-left-right-container">
@@ -83,9 +89,9 @@
                     </section>
                     <footer>
                         <!-- Кнопка "Вернуться на главную страницу" -->
-                        <button class="float-right tm-button" onclick="goToHomePage()">Вернуться на главную страницу</button>
-                        <p class="tm-copyright-p">Copyright &copy; <span class="tm-current-year">2024</span>                                
-                        <a href="https://wcsandro.github.io/anatoliisoloviov/" target="_parent">Soloviov Anatolii</a> Все права защищены </p>
+                        <button class="float-right tm-button" onclick="goToHomePage()">Вернуться на главную страницу</button><p></p>
+                        <div id="footer-icons"></div>      
+                        <div id="footer-2"></div>                            
                     </footer>
 
                     </div>  
@@ -93,13 +99,5 @@
             </div> <!-- tm-left-right-container -->
         </div> <!-- row -->
     </div> <!-- container -->
-
-    <script>
-        function goToHomePage() {
-          // Используйте window.location.href для перенаправления на главную страницу
-          window.location.href = "index.html";
-        }
-      </script>
-
 </body>
 </html>
