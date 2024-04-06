@@ -4,7 +4,9 @@
         // Single page nav
         $('.tm-main-nav').singlePageNav({
             'currentClass' : "active",
-            offset : 20
+            'offset' : 20,
+            'speed': 500,
+            'easing': 'swing'
         });
     });
 

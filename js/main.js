@@ -1,4 +1,29 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Загрузка скриптов jQuery и других библиотек
+    Promise.all([
+        loadScript("js/jquery-1.11.3.min.js"),
+        loadScript("js/jquery.magnific-popup.min.js"),
+        loadScript("js/jquery.singlePageNav.min.js")
+    ]).then(() => {
+        // Все скрипты загружены успешно
+        console.log("Все скрипты загружены");
+    }).catch(error => {
+        console.error('Ошибка при загрузке скриптов:', error);
+    });
+
+    // Функция для загрузки скрипта
+    function loadScript(url) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = url;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
     // Загрузка общей навигации
     fetch("common/navigation.html")
         .then(response => response.text())
@@ -27,6 +52,16 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => {
             console.error('Ошибка при загрузке иконок:', error);
         });    
+    // Загрузка страниц поиска работы
+    fetch("common/work.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("works").innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Ошибка при загрузке ссылок:', error);
+        });            
+
 });
 function goToHomePage() {
     // Используйте window.location.href для перенаправления на главную страницу
