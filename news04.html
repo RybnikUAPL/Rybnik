@@ -25,40 +25,12 @@ gtag('js', new Date());
 
 gtag('config', 'G-1KV4WYSNP9');
 </script>
-<body>        
+<body>
+<script src="js/main.js"></script>                          <!-- Navigation and footer and all scripts-->
     <div class="container">
         <div class="row">
             <div class="tm-left-right-container">
-                <!-- Left column: logo and menu -->
-                <div class="tm-blue-bg tm-left-column">                        
-                    <div class="tm-logo-div text-xs-center">
-                        <img src="img/logo.png" alt="Logo">
-                        <h1 class="tm-site-name">Rybnik UA PL</h1>
-                    </div>
-                    <nav class="tm-main-nav">
-                        <ul class="tm-main-nav-ul">
-                            <li class="tm-nav-item">
-                                <a href="index.html#welcome" class="tm-nav-item-link">Добро пожаловать</a>
-                            </li>
-                            <li class="tm-nav-item">
-                                <a href="index.html#about" class="tm-nav-item-link">Краткая инфомация по сайту</a>
-                            </li>
-                            <li class="tm-nav-item">
-                                <a href="index.html#question1" class="tm-nav-item-link">Основная информация</a>
-                            </li>
-                            <li class="tm-nav-item">
-                                <a href="index.html#question2" class="tm-nav-item-link">Часто задаваемые вопросы</a>
-                            </li>
-                            <li class="tm-nav-item">
-                                <a href="index.html#question3" class="tm-nav-item-link">Зона развлечений</a>
-                            </li>
-                            <li class="tm-nav-item">
-                                <a href="index.html#contact" class="tm-nav-item-link">Как с нами связаться</a>
-                            </li>
-                        </ul>
-                    </nav>                                         
-                </div> <!-- Left column: logo and menu -->
-
+                <div id="header"></div>
                 <!-- Center content -->
                 <div class="tm-right-column">
                     <div class="tm-content-div">
@@ -82,24 +54,16 @@ gtag('config', 'G-1KV4WYSNP9');
                         </section>
                     </section>
                     <footer>
-                        <!-- Кнопка "Вернуться на главную страницу" -->
-                        <button class="float-right tm-button" onclick="goToHomePage()">Вернуться на главную страницу</button>
-                        <p class="tm-copyright-p">Copyright &copy; <span class="tm-current-year">2024</span>                                
-                        <a href="https://wcsandro.github.io/anatoliisoloviov/" target="_parent">Soloviov Anatolii</a> Все права защищены </p>
-                    </footer>
-
+                        <footer>
+                            <!-- Кнопка "Вернуться на главную страницу" -->
+                            <button class="float-right tm-button" onclick="goToHomePage()">Вернуться на главную страницу</button><p></p>
+                            <div id="footer-icons"></div>      
+                            <div id="footer-2"></div>                            
+                        </footer>
                     </div>  
                 </div>
             </div> <!-- tm-left-right-container -->
         </div> <!-- row -->
     </div> <!-- container -->
-
-    <script>
-        function goToHomePage() {
-          // Используйте window.location.href для перенаправления на главную страницу
-          window.location.href = "index.html";
-        }
-      </script>
-
 </body>
 </html>
