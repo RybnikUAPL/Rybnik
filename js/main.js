@@ -53,14 +53,19 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error('Ошибка при загрузке иконок:', error);
         });    
     // Загрузка страниц поиска работы
-    fetch("common/work.html")
+    fetch("common/work-3.html")
         .then(response => response.text())
         .then(data => {
-            document.getElementById("works").innerHTML = data;
+            var workElement = document.getElementById("work-2");
+            if (workElement) {
+                workElement.innerHTML = data;
+            } else {
+                console.error('Элемент с id "work-2" не найден на странице.');
+            }
         })
         .catch(error => {
-            console.error('Ошибка при загрузке ссылок:', error);
-        });            
+            console.error('Ошибка при загрузке ссылок', error);
+        }); 
 
 });
 function goToHomePage() {
