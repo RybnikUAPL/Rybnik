@@ -17,6 +17,22 @@ a:focus {
 }
 
 .row { display: block; }
+
+.language {
+	float: right;
+	margin-right: 10px;
+	margin-top: 5px; /* Отступ снизу */	
+	border: 1px solid #006599; /* Обводка толщиной 2 пикселя, черного цвета */
+	border-radius: 10px; /* Пример значения радиуса */
+    padding: 5px; /* Внутренний отступ вокруг содержимого блока */
+}
+
+.language a {
+    margin-left: 5px; /* Отступ между элементами выбора языка */
+    color: #006599; /* Цвет текста */
+	font-size: 14px; /* Размер шрифта */
+}
+
 .tm-left-right-container { width: 100%; }
 
 .tm-blue-bg {
