@@ -21,7 +21,7 @@ a:focus {
 .language {
 	float: right;
 	margin-right: 10px;
-	margin-top: 5px; /* Отступ снизу */	
+	margin-top: 5px; /* Отступ сверху */	
 	border: 1px solid #006599; /* Обводка толщиной 2 пикселя, черного цвета */
 	border-radius: 10px; /* Пример значения радиуса */
     padding: 5px; /* Внутренний отступ вокруг содержимого блока */
@@ -29,8 +29,14 @@ a:focus {
 
 .language a {
     margin-left: 5px; /* Отступ между элементами выбора языка */
-    color: #006599; /* Цвет текста */
+    color: #398cb6; /* Цвет текста */
 	font-size: 14px; /* Размер шрифта */
+	font-weight: bold; /* Толщина текста */
+}
+.language a:hover,
+.language a:active a,
+.language a:focus {
+	color: #073d77; /* Цвет при наведении или фокусе */
 }
 
 .tm-left-right-container { width: 100%; }
