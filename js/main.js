@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Загрузка скриптов jQuery и других библиотек
+    // Loading jQuery and other libraries
     Promise.all([
         loadScript("js/jquery-1.11.3.min.js"),
         loadScript("js/jquery.magnific-popup.min.js"),
         loadScript("js/jquery.singlePageNav.min.js")
     ]).then(() => {
-        // Все скрипты загружены успешно
+        // All scripts loaded successfully
         console.log("Все скрипты загружены");
     }).catch(error => {
         console.error('Ошибка при загрузке скриптов:', error);
     });
 
-    // Функция для загрузки скрипта
+    // Function to load a script
     function loadScript(url) {
         return new Promise((resolve, reject) => {
             const script = document.createElement("script");
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Загрузка общей навигации
+    // Loading common navigation
     fetch("common/navigation.html")
         .then(response => response.text())
         .then(data => {
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error('Ошибка при загрузке навигации:', error);
         });
 
-    // Загрузка общего футера
+    // Loading common footer
     fetch("common/footer-2.html")
         .then(response => response.text())
         .then(data => {
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => {
             console.error('Ошибка при загрузке футера:', error);
         });
-    // Загрузка иконок
+    // Loading icons
     fetch("common/icons-1.html")
         .then(response => response.text())
         .then(data => {
@@ -52,9 +52,9 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => {
             console.error('Ошибка при загрузке иконок:', error);
         });    
-    // Загрузка страниц поиска работы
+    // Loading job search pages
 });
 function goToHomePage() {
-    // Используйте window.location.href для перенаправления на главную страницу
+    // Use window.location.href to redirect to the home page
     window.location.href = "index.html";
   }
