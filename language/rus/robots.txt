@@ -1,0 +1,7 @@
+User-agent: *
+User-agent: Googlebot
+Allow: /
+Disallow: /newsNULL
+Disallow: /foto
+Disallow: /zone4
+Sitemap: https://rybnikuapl.github.io/Rybnik/sitemap.xml
