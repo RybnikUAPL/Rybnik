@@ -18,7 +18,7 @@
 </head>
 <script src="js/gtag.js"></script>
 <body>        
-<script src="js/main.js"></script>                          <!-- Navigation and footer and all scripts-->
+<script src="js/main.js"></script>                                                            <!-- Navigation and footer and all scripts-->
     <div class="container">
         <div class="row">
             <div class="tm-left-right-container">
@@ -26,13 +26,13 @@
                 <!-- Center content -->
                 <div class="tm-right-column">
                     <div class="tm-content-div">
-                        <!-- Добавленная информация по центру -->
+                        <!-- Added information in the center -->
                         <section id="additional-info" class="tm-section">
                             <header>
                                 <h2 class="tm-blue-text tm-section-title tm-margin-b-30">Зона развлечений.</h2>
                             </header>
                             <p>Погода. Музыка. И что-то еще.</p>
-                            <!-- Погодный Блок-->
+                            <!-- Weather Block-->
                             <div id="weather-widget">
                                 <h2 class="tm-blue-text tm-section-title tm-margin-b-30">Погода в нашем городе Rybnik</h2>
                                 <img id="weather-icon" alt="Weather Icon">
@@ -40,7 +40,7 @@
                                 <span id="description">Состояние:  id="weather-description"></span>,
                                 <span id="wind">Скорость ветра:  id="wind-speed"></span> м/с, <span id="wind-direction"></span>,
                             </div>
-                                <!-- Радиопроигрыватель -->
+                                <!-- Radio Player -->
                                 <section id="question3" class="tm-section">
                                     <header><h2 class="tm-blue-text tm-section-title tm-margin-b-30">Радио хорошего настроения в Rybnik </h2></header>
                                     В связи с перебоями электричества украинское радио может работать нестабильно.
@@ -77,20 +77,18 @@
             </div> <!-- tm-left-right-container -->
         </div> <!-- row -->
     </div> <!-- container -->
-     <!-- Громкость плеера на хх процентов при загрузке страницы -->
+     <!-- Player volume set to xx percent when the page loads -->
      <script>
         document.addEventListener('DOMContentLoaded', function() {
             var player = document.getElementById('radioPlayer');
-            player.volume = 0.1; // Установка громкости на 5%
+            player.volume = 0.1; // Set volume to 5%
         });
     </script>
     
-    <!-- Скрипт "Вернуться на главную страницу" -->
-
-    <!-- Погодный скрипт -->
+    <!-- Weather script -->
     <script>
-        const apiKey = 'dd5d78b06ff6d995459682c44d8ea459'; // Замените 'YOUR_API_KEY' на ваш собственный API-ключ
-        const city = 'RYBNIK'; // Замените 'YOUR_CITY' на ваш город
+        const apiKey = 'dd5d78b06ff6d995459682c44d8ea459'; // Replace 'YOUR_API_KEY' with your own API key
+        const city = 'RYBNIK'; // Replace 'YOUR_CITY' with your city
     
         const weatherIconElement = document.getElementById('weatherIcon');
         const weatherWidget = document.getElementById('weather-widget');
@@ -102,7 +100,7 @@
     
         const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=ru&units=metric`;
     
-        // Функция для обновления данных погоды
+        // Function to update weather data
         function updateWeather() {
             fetch(apiURL)
                 .then(response => response.json())
@@ -124,7 +122,7 @@
                 .catch(error => console.error('Ошибка получения данных о погоде', error));
         }
     
-        // Обновляем данные при загрузке страницы
+        // Update data when the page loads
         updateWeather();
     </script>
     <script>
@@ -134,7 +132,7 @@
             const direction = directions[index];
             document.getElementById('wind-direction').textContent = `Направление ветра: ${direction}`;
         }
-        const windDirectionDegrees = 45; // Замените на фактический угол направления ветра
+        const windDirectionDegrees = 45; // Replace with the actual wind direction angle
         displayWindDirection(windDirectionDegrees);
     </script>
 
@@ -149,7 +147,7 @@
             var selectedStation = selectMenu.value;
             document.getElementById("radioSource").src = selectedStation;
             document.getElementById("radioPlayer").load();
-            toggleContextMenu(); // Закрыть меню после выбора
+            toggleContextMenu(); // Close the menu after selection
         }
     </script>
 </body>
