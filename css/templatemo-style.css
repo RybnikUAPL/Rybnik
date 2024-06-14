@@ -131,6 +131,11 @@ p { line-height: 2; }
 	width: 50%; 
 	text-align: center;
 	font-weight: bold;
+	transition: transform 0.4s;
+}
+.tm-img-container-1:hover,
+.tm-img-container-2:hover {
+	transform: scale(1.05); /* Увеличение размера при наведении */
 }
 
 .tm-img-tn {
