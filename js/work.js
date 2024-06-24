@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Загрузка страниц поиска работы
-    fetch("common/work-3.html")
+    fetch("common/work.html")
         .then(response => response.text())
         .then(data => {
-            var workElement = document.getElementById("work-3");
+            var workElement = document.getElementById("work");
             if (workElement) {
                 workElement.innerHTML = data;
             } else {
-                console.error('Элемент с id "work-3" не найден на странице.');
+                console.error('Элемент с id "work" не найден на странице.');
             }
         })
         .catch(error => {
