@@ -1,8 +1,8 @@
 
 // jQuery код
-    $(document).ready(function(){
+    $(document).ready(function() {
         // Single page nav
-        $('.tm-main-nav').singlePageNav({
+        $('.tm-main-nav').singlePageNav( {
             'currentClass' : "active",
             'offset' : 20,
             'speed': 500,
@@ -11,25 +11,25 @@
     });
 
     // Magnific pop up
-    $('.tm-gallery-1').magnificPopup({
+    $('.tm-gallery-1').magnificPopup( {
         delegate: 'a',
         type: 'image',
         gallery: {enabled:true}
     });
 
-    $('.tm-gallery-2').magnificPopup({
+    $('.tm-gallery-2').magnificPopup( {
         delegate: 'a',
         type: 'image',
         gallery: {enabled:true}
     });
 
-    $('.tm-gallery-3').magnificPopup({
+    $('.tm-gallery-3').magnificPopup( {
         delegate: 'a',
         type: 'image',
         gallery: {enabled:true}
     });
 
-    $('.tm-gallery-4').magnificPopup({
+    $('.tm-gallery-4').magnificPopup( {
         delegate: 'a',
         type: 'image',
         gallery: {enabled:true}
