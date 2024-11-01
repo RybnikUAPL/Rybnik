@@ -1,83 +1,72 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="index, follow">
-    <meta name="description" content="С Новым Годом Happy new Year 2025">
-    <link rel="icon" type="image/x-icon" href="img/logorybnik.png">
-
-    <title>Rybnik UA PL</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
-    <!-- Google web font "Open Sans" -->
-    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Bootstrap style -->
-    <link rel="stylesheet" href="css/magnific-popup.css"> <!-- Magnific pop up style -->
-    <link rel="stylesheet" href="css/templatemo-style.css"> <!-- Templatemo style -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймер обратного отсчета</title>
     <style>
         body {
             background-image: url('img/newyeard.webp');
-            /* Путь к вашему изображению */
             background-size: cover;
-            /* Масштабирование фона, чтобы покрыть весь экран */
             background-position: center;
-            /* Центрирование изображения */
             background-repeat: no-repeat;
-            /* Отключение повторения изображения */
-            height: 100vh;
-            /* Установка высоты body на весь видимый экран */
-            margin: 0;
-            /* Убираем отступы для корректного отображения */
-        }
-
-        #countdown-timer {
-            font-size: 36px;
             color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .timer-container {
+            background-color: rgba(255, 255, 255, 0.4); /* Прозрачный белый фон */
+            border: 3px solid rgba(255, 255, 255, 0.5); /* Полупрозрачная белая рамка */
+            padding: 20px;
+            border-radius: 15px; /* Скруглённые углы */
+            box-shadow: 5 5 10px rgba(0, 0, 0, 0.5); /* Тень для объема */
+            text-align: center;
+        }
+        h2, p {
+            color: rgb(30, 242, 34);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            /* Небольшая тень для текста */
+            font-size: 50px; /* Увеличенный размер шрифта */
+
+        }
+        #countdown-timer {
+            font-size: 60px; /* Увеличенный размер шрифта */
+            color: rgb(30, 242, 34);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Тень текста для улучшенной читаемости */
         }
     </style>
 </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1KV4WYSNP9"></script>
-<script src="js/gtag.js"></script>
-<script src="js/common.js"></script>
-<script src="js/main.js"></script>
-
 <body>
-    <div class="tm-content-div">
-        <header>
-            <h2 class="tm-margin-b-30">До Нового Года осталось:</h2>
-        </header>
-        <p>Таймер обратного отсчета до Нового года:</p>
-        <div id="countdown-timer"></div>
-        <footer>
-            <button class="float-right tm-button" onclick="goToHomePage()">Вернуться на главную страницу</button>
-        </footer>
+    <div class="timer-container">
+        <h2>До Нового Года осталось:</h2>
+        <p id="countdown-timer">Загрузка...</p>
     </div>
 
     <script>
         function updateCountdown() {
-            const newYear = new Date('January 1, 2025 00:00:00').getTime();
-            const now = new Date().getTime();
-            const timeLeft = newYear - now;
+            const now = new Date();
+            const newYear = new Date(now.getFullYear() + 1, 0, 1);
+            const timeDifference = newYear - now;
 
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-            document.getElementById('countdown-timer').innerHTML =
-                `${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
+            document.getElementById('countdown-timer').textContent =
+                `${days} дн ${hours} ч ${minutes} мин ${seconds} сек`;
 
-            if (timeLeft < 0) {
-                document.getElementById('countdown-timer').innerHTML = "С Новым Годом!";
+            if (timeDifference <= 0) {
+                clearInterval(timerInterval);
+                document.getElementById('countdown-timer').textContent = 'С Новым Годом!';
             }
         }
 
-        setInterval(updateCountdown, 1000);
+        const timerInterval = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Первоначальный вызов для немедленного отображения
     </script>
 </body>
-
 </html>
