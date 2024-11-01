@@ -19,23 +19,36 @@
             margin: 0;
         }
         .timer-container {
-            background-color: rgba(255, 255, 255, 0.4); /* Прозрачный белый фон */
-            border: 3px solid rgba(255, 255, 255, 0.5); /* Полупрозрачная белая рамка */
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.5);
             padding: 20px;
-            border-radius: 15px; /* Скруглённые углы */
-            box-shadow: 5 5 10px rgba(0, 0, 0, 0.5); /* Тень для объема */
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
             text-align: center;
         }
         h2, p {
-            color: rgb(30, 242, 34);
+            color: rgb(56, 244, 59);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            font-size: 50px; /* Увеличенный размер шрифта */
-
+            font-size: 50px;
         }
         #countdown-timer {
-            font-size: 60px; /* Увеличенный размер шрифта */
+            font-size: 60px;
             color: rgb(30, 242, 34);
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Тень текста для улучшенной читаемости */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 20px;
+            color: #fff;
+            background-color: rgba(30, 242, 34, 0.8);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        .back-button:hover {
+            background-color: rgba(30, 242, 34, 1);
         }
     </style>
 </head>
@@ -43,6 +56,7 @@
     <div class="timer-container">
         <h2>До Нового Года осталось:</h2>
         <p id="countdown-timer">Загрузка...</p>
+        <button class="back-button" onclick="window.location.href='index.html'">Вернуться на главную</button>
     </div>
 
     <script>
@@ -66,7 +80,7 @@
         }
 
         const timerInterval = setInterval(updateCountdown, 1000);
-        updateCountdown(); // Первоначальный вызов для немедленного отображения
+        updateCountdown();
     </script>
 </body>
 </html>
