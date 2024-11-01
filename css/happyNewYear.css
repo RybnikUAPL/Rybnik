@@ -34,12 +34,12 @@ h2, p {
     padding: 10px 20px;
     font-size: 20px;
     color: #fff;
-    background-color: rgba(30, 242, 34, 0.8);
+    background-color: rgba(30, 140, 242, 0.8);
     border: none;
     border-radius: 10px;
     cursor: pointer;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 .back-button:hover {
-    background-color: rgba(30, 242, 34, 1);
+    background-color: rgb(65, 39, 216);
 }
