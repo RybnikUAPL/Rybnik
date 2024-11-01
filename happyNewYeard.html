@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="город рыбник rybnik UA PL сайт помощь украинцам faq часто задаваемые вопросы полезная информация">
+    <link rel="icon" type="image/x-icon" href="img/logorybnik.png">
+
+    <title>Rybnik UA PL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Bootstrap style -->
+    <link rel="stylesheet" href="css/magnific-popup.css"> <!-- Magnific pop up style -->
+    <link rel="stylesheet" href="css/templatemo-style.css"> <!-- Templatemo style -->
+    <style>
+        body {
+            background-image: url('img/newyeard.webp'); /* Путь к вашему изображению */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff; /* Цвет текста для контраста */
+        }
+
+        #countdown-timer {
+            font-size: 36px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Небольшая тень для текста */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+                <div class="tm-right-column">
+                    <div class="tm-content-div">
+                        <section id="additional-info" class="tm-section">
+                            <header>
+                                <h2 class="tm-blue-text tm-section-title tm-margin-b-30">До Нового Года осталось:</h2>
+                            </header>
+                            <p>Таймер обратного отсчета до Нового года:</p>
+                            <div id="countdown-timer"></div>
+                        </section>
+                        <footer>
+                            <button class="float-right tm-button" onclick="goToHomePage()">Вернуться на главную страницу</button>
+                        </footer>
+                    </div>
+                </div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const newYear = new Date('January 1, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = newYear - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown-timer').innerHTML = 
+                `${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
+
+            if (timeLeft < 0) {
+                document.getElementById('countdown-timer').innerHTML = "С Новым Годом!";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>
