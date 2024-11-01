@@ -4,83 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Таймер обратного отсчета до Нового Года!!!</title>
-    <style>
-        body {
-            background-image: url('img/BackgroundHappyNewYear.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .timer-container {
-            background-color: rgba(255, 255, 255, 0.4);
-            border: 3px solid rgba(255, 255, 255, 0.5);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-        h2, p {
-            color: rgb(56, 244, 59);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            font-size: 50px;
-        }
-        #countdown-timer {
-            font-size: 60px;
-            color: rgb(30, 242, 34);
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-        }
-        .back-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 20px;
-            color: #fff;
-            background-color: rgba(30, 242, 34, 0.8);
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        .back-button:hover {
-            background-color: rgba(30, 242, 34, 1);
-        }
-    </style>
 </head>
+
+<script src="js/happyNewYear.js"></script>
+<link rel="stylesheet" href="css/happyNewYear.css">
+
 <body>
     <div class="timer-container">
         <h2>До Нового Года осталось:</h2>
         <p id="countdown-timer">Загрузка...</p>
         <button class="back-button" onclick="window.location.href='index.html'">Вернуться на главную</button>
     </div>
-
-    <script>
-        function updateCountdown() {
-            const now = new Date();
-            const newYear = new Date(now.getFullYear() + 1, 0, 1);
-            const timeDifference = newYear - now;
-
-            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-            document.getElementById('countdown-timer').textContent =
-                `${days} дн ${hours} ч ${minutes} мин ${seconds} сек`;
-
-            if (timeDifference <= 0) {
-                clearInterval(timerInterval);
-                document.getElementById('countdown-timer').textContent = 'С Новым Годом!!!';
-            }
-        }
-
-        const timerInterval = setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
 </body>
 </html>
