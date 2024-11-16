@@ -289,7 +289,8 @@ textarea:-ms-input-placeholder {
 @media (min-width: 576px) {
 	.container { width: 100%; }
 	.tm-site-name { margin-top: 35px; }
-	.tm-welcome-title { font-size: 2.0rem; }
+	.tm-welcome-title {	font-size: 1.0rem; }
+	.tm-section-title {	font-size: 1.0rem; }	
 	.tm-img-container-1 { width: 20%; }
 	.tm-img-container-2 { width: 20%; }
 	.tm-img-container-3 { width: 20%; }
@@ -298,6 +299,8 @@ textarea:-ms-input-placeholder {
 
 @media (min-width: 768px) {
 	.tm-about-img-container { margin-top: 0; }
+	.tm-welcome-title {	font-size: 1.0rem; }
+	.tm-section-title {	font-size: 1.0rem; }
 }
 
 @media (min-width: 992px) {
@@ -305,6 +308,8 @@ textarea:-ms-input-placeholder {
 		display: flex;
 		justify-content: center;
 	}
+	.tm-welcome-title {	font-size: 1.0rem; }
+	.tm-section-title {	font-size: 1.0rem; }
 
 	.tm-left-column { 
 		position: fixed; 
@@ -373,6 +378,8 @@ textarea:-ms-input-placeholder {
 	.tm-img-container-3 { width: 20%; }
 	.tm-img-container-4 { width: 20%; }	
 	.tm-contact-right { padding-left: 42px; }
+	.tm-welcome-title {	font-size: 1.0rem; }
+	.tm-section-title {	font-size: 1.0rem; }
 }
 
 @media (min-width: 1500px) {	
@@ -418,6 +425,8 @@ textarea:-ms-input-placeholder {
 	    padding-top: 45px;
 	    padding-bottom: 20px;
 	}
+	.tm-welcome-title {	font-size: 1.0rem; }
+	.tm-section-title {	font-size: 1.0rem; }
 
 	.tm-nav-item { font-size: 1.4rem; }
 
