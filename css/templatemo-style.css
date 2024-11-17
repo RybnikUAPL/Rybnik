@@ -280,6 +280,17 @@ textarea:-ms-input-placeholder {
 
 
 /* Media Queries */
+@media (max-width: 576px) {
+	.container { width: 100%; }
+	.tm-site-name { margin-top: 35px; }
+	.tm-welcome-title {	font-size: 1.0rem; }
+	.tm-section-title {	font-size: 1.0rem; }
+	.tm-img-container-1 { width: 20%; }
+	.tm-img-container-2 { width: 20%; }
+	.tm-img-container-3 { width: 20%; }
+	.tm-img-container-4 { width: 20%; }
+}
+
 @media (min-width: 576px) {
 	.container { width: 100%; }
 	.tm-site-name { margin-top: 35px; }
