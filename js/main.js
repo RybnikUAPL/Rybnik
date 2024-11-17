@@ -52,6 +52,15 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => {
             console.error('Ошибка при загрузке иконок:', error);
         });    
+    // Loading button
+    fetch("common/button.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-button").innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Ошибка при загрузке иконок:', error);
+        });            
     // Loading job search pages
 });
 function goToHomePage() {
