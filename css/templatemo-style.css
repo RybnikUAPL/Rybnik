@@ -82,10 +82,13 @@ p { line-height: 2; }
 	color: white;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 1.2rem;	
-	padding: 5px 15px;
+	font-size: 1.0rem;	
+	padding: 5px 5px;
 	border-radius: 4px; /* Скругление углов */
 }
+
+
+
 
 .tm-button-wide { 
 	padding: 8px;
@@ -289,6 +292,8 @@ textarea:-ms-input-placeholder {
 	.tm-img-container-2 { width: 20%; }
 	.tm-img-container-3 { width: 20%; }
 	.tm-img-container-4 { width: 20%; }
+	.tm-button { font-size: 1rem ; }
+
 }
 
 @media (min-width: 576px) {
