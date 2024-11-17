@@ -309,8 +309,8 @@ textarea:-ms-input-placeholder {
 }
 
 @media (min-width: 992px) {
-	.tm-welcome-title {	font-size: 1.5rem; }
-	.tm-section-title {	font-size: 1.5rem; }
+	.tm-welcome-title {	font-size: 1.4rem; }
+	.tm-section-title {	font-size: 1.4rem; }
 	.tm-main-nav {
 		display: flex;
 		justify-content: center;
@@ -377,8 +377,8 @@ textarea:-ms-input-placeholder {
 }
 
 @media (min-width: 1200px) {		
-	.tm-welcome-title {	font-size: 1.7rem; }
-	.tm-section-title {	font-size: 1.7rem; }
+	.tm-welcome-title {	font-size: 1.5rem; }
+	.tm-section-title {	font-size: 1.5rem; }
 	.container { width: 100%; }	
 	.tm-img-container-1 { width: 20%; }
 	.tm-img-container-2 { width: 20%; }
@@ -388,8 +388,8 @@ textarea:-ms-input-placeholder {
 }
 
 @media (min-width: 1500px) {	
-	.tm-welcome-title {	font-size: 2.0rem; }
-	.tm-section-title {	font-size: 2.0rem; }
+	.tm-welcome-title {	font-size: 1.7rem; }
+	.tm-section-title {	font-size: 1.7rem; }
 	.container { width: 100%; }
 	p { margin-bottom: 30px; }
 
@@ -406,8 +406,8 @@ textarea:-ms-input-placeholder {
 }
 
 @media (min-width: 1800px) {
-	.tm-welcome-title {	font-size: 2.5rem; }
-	.tm-section-title {	font-size: 2.5rem; }
+	.tm-welcome-title {	font-size: 2.0rem; }
+	.tm-section-title {	font-size: 2.0rem; }
 	.container,
 	.tm-left-right-container {
 	    width: 100%;
